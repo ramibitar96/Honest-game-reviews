@@ -1,1 +1,1 @@
-# Honest-game-reviews personal project
+# Honest-game-reviews capstone project for Claim Academy
