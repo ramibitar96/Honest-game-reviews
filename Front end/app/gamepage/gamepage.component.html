@@ -1,0 +1,104 @@
+<div class="container" style="margin-left: 0; margin-top: 0; margin-bottom: -10%; position: relative">
+  <div style="width:120%;" class="grid-container">
+    <div class="item1">
+      <div class="col-md-12" style="margin-top: 20px;margin-left: 20px; margin-bottom: 10px">
+        <div style="padding-bottom:12px; height: 100%; width: 75%;">
+          <a>
+            <div class="card border-primary" style="height: 100%">
+              <img style="height: 360px; width: 240px" class="card-img-top" alt="PosterIMG" [src]="data.boxUrl">
+              <div class="card-body card-noboday" style="text-align:center;">
+              </div>
+              <div class="card-footer bg-secondary" style="text-align:center;">
+                <p>{{data.gameName}}</p>
+                <p>Released {{data.releaseDate}}</p>
+                <p>ESRB: {{data.esrbRating}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="item2" style="padding: 10px; text-align: left">
+      <textarea style = "margin-left: 30px" class="overview-text" tabindex="0" disabled="yes" cols="100" rows="10">{{data.gameInfoText}}
+      </textarea>
+    </div>
+    <div class="item3">
+      <p style="margin-top: 30px; font-size: 30pt">Average score</p>
+      <div *ngIf="hasRating(); else noRating">
+        <p style="display:inline; font-size: 30pt">{{avgRating | number:'1.0-1'}} / 10 </p>
+        <p style="display:inline; font-size: 16pt"> with {{count}} review(s)<p>
+      </div>
+      <ng-template #noRating>
+          <p style="margin-top: 30px; font-size: 40pt">N/A</p>
+      </ng-template>
+    </div>
+    <div class="item4">
+      <div style="height: 100%; width: 100%; margin-top: 5%" class="col-md-12">
+        <div class="well well-sm">
+          <div class="row" id="post-review-box">
+            <div class="col-md-12">
+              <textarea [(ngModel)]="reviewMessage" class="form-control" style="resize: none" cols="50" placeholder="Enter your review here..."
+                rows="5"></textarea>
+              <br>
+              <div style="position: relative" class="text-right">
+                <label style="position: absolute; top: 11px; left: 220px" for="rating">Your Rating: </label>
+                <select [(ngModel)]="reviewRating" style="position: absolute; top: 5px; right: 100px" class=" form-control col-md-2" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <button [disabled]="canSubmit()" (click)="submitReview()" class="btn btn-success btn-lg" type="submit">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px; margin-left: 220px" *ngIf = "hasYoutubeUrl(data.youtube)">
+  <iframe [src] = "data.youtube | videoPipe" width="900px" height= "500px" frameborder = "0" allowFullScreen="allowFullScreen"></iframe>
+  </div>
+
+  <div style="background-color: white; position: absolute; margin-left: 65px; padding: 20px; width: 1200px">
+
+    <div class="row pb-3">
+      <div class="col-md-12">
+        <h2 style="font-weight: bold; text-align: center">User Reviews</h2>
+      </div>
+    </div>
+
+    <div *ngIf="reviewList.length !== 0 else default" class="one-review">
+      <div *ngFor="let oneReview of reviewList">
+        <div class="row">
+          <div class="col-md-6">
+            <p style="font-weight: bold; font-size: 14pt">{{oneReview.username}}</p>
+          </div>
+        </div>
+        <div class="row text-success">
+          <div class="col-md-12" >
+            <i *ngFor="let i of arrayOne(oneReview.rating)" class="fa fa-star"></i>
+          </div>
+        </div>
+        <br>
+        <div class="row pt-2">
+          <div class="col-md-12">
+            <p>{{oneReview.review}}</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+    <ng-template #default>
+      <p style="text-align: center; margin-left: 0px;">There are currently no reviews available for this game.</p>
+      <hr>
+    </ng-template>
+  </div>
+</div>

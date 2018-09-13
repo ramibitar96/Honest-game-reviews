@@ -1,0 +1,41 @@
+<div class="container col-md-8" style="margin-top: 2%; margin-left: 15%; background-color: white; border-radius: 5px; margin-bottom: 3%; padding-bottom: 50px;">
+  <div class="original">
+    <h2 class="title">{{original.subject}}</h2>
+    <p class="meta">{{original.date | date:'medium' }} Posted by {{original.author}}</p>
+    <div class="entry">
+      <p>{{original.body}}</p>
+    </div>
+    <hr>
+  </div>
+
+  <div id = "content">
+    <div *ngIf="hasComments(); else noComments">
+      <div class="post" *ngFor="let comment of comments">
+        <h3 class="title">Re: {{original.subject}}</h3>
+        <p class="meta">{{comment.date | date:'medium' }} Posted by {{comment.author}}</p>
+        <div class="entry">
+          <p>{{comment.body}}</p>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <ng-template #noComments>
+      <div style="text-align: center">
+        <h3>There are no comments for this post</h3>
+
+        <br>
+      </div>
+    </ng-template>
+  </div>
+
+  <div>
+    <div>
+      <br>
+      <textarea  [(ngModel)] = "comment.body" id ="commentBody" style="resize: none; margin-top: 10px; margin-left: 30px;  margin-bottom: 10px;" rows="8" class="col-md-11"></textarea>
+    </div>
+    <br>
+    <button [disabled]="disableComment()" (click) = "submitComment()" style="display: block; position: absolute; right: 59px; bottom: 10px;" type="submit" class="btn btn-primary">Post
+      Reply</button>
+  </div>
+</div>

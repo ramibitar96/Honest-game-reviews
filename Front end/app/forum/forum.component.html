@@ -1,0 +1,41 @@
+
+
+
+<div class="container col-md-4" style="margin-top: 8%; margin-left: 32%; background-color: white; border-radius: 5px; margin-bottom: 2%; padding: 20px;">
+    <h1 style="text-align: center">Honest Game Reviews Forum</h1>
+</div>
+<div class="container col-md-8" style="margin-top: 0; margin-left: 16%; background-color: white; border-radius: 5px; margin-bottom: 3%;">
+
+  <div id="content">
+    <div *ngIf="hasPosts(); else noPosts" >
+      <div *ngFor="let onePost of allPosts | reverse">
+      <div class="post" style = "margin-left: 1%;">
+        <h3 class="title"><a (click)="openDialog(onePost)">{{onePost.subject}}</a></h3>
+        <p class="meta" style="font-size: 13pt">{{onePost.date | date:'medium' }} posted by {{onePost.author}}</p>
+        <hr>
+      </div>
+    </div>
+    </div>
+    <ng-template #noPosts>
+        <div style="text-align: center">
+          <h2>There are currently no posts on this forum</h2>
+        </div>
+    </ng-template>
+  </div>
+  <div class="container col-md-6" style="margin-top: 3px; border-radius: 5px; padding-bottom: 10px; padding-top: 10px;  margin-bottom: 3%;">
+      <div style="padding-bottom: 40px;">
+          <h2>Create a new post</h2>
+          <br>
+          <label for="Subject">Subject:</label>
+          <div class="form-group form-inline">
+            <input [(ngModel)] = "post.subject" id="sub" type = "text" style="margin-bottom: 10px" class="form-control col-md-12" id = "Subject">
+          </div>
+          <div class="form-group">
+            <textarea [(ngModel)] = "post.body" id="bod" style = "resize: none" cols="130" rows="10"></textarea>
+          </div>
+          <button [disabled]= "disableSubmit()" (click) = "submitPost()" style= "display: block; position: absolute; right: -588px; height: 50px;" type="submit" class="btn btn-primary">Submit Post</button>
+        </div>
+  </div>
+</div>
+
+

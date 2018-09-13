@@ -1,0 +1,27 @@
+
+<div class="form container">
+
+  <form class = "rounded" name="contactform">
+    <p style = "margin-right: 15px" id = "information" class = "info">No personal information besides your email required.</p>
+
+    <p class="contact"><label for="email">Email</label></p>
+
+    <input [(ngModel)] = "user.email" name="email" placeholder="Example@domain.com" type="email">
+
+    <p class="contact"><label for="username">Create a username (max: 12 characters)</label></p>
+
+    <input [(ngModel)] = "user.username" name="username" placeholder="Username" type="text" maxlength="12">
+
+    <p class="contact"><label for="password">Create a password</label></p>
+
+    <input type="password" [(ngModel)] = "user.password" name="password" placeholder="Password">
+
+    <p class="contact"><label for="cPassword">Confirm your password</label></p>
+
+    <input [(ngModel)] = "user.cPassword" type="password" name="cPassword" placeholder="Re-enter password">
+
+    <button style="position: relative; right: -292px" (click) = "signup()" type="submit">Sign me up!</button>
+
+  </form>
+
+</div>

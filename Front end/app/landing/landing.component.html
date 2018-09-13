@@ -1,0 +1,153 @@
+
+        <div class="container">
+          <div style = "margin-right: -180px; pointer-events:initial" class="col-md-5">
+              <div class="col-md-8">
+                <input [(ngModel)]="gameName" type="text" class="form-control input-lg" placeholder="Search..." />
+              </div>
+          </div>
+          <div style = "margin-right: -7px" class="col-md-2">
+            <select [(ngModel)]="platformID" class="form-control" id="platformList">
+              <option value="0" selected="">All</option>
+              <option value="25">3DO</option>
+              <option value="4944">Acorn Archimedes</option>
+              <option value="4954">Acorn Electron</option>
+              <option value="4976">Action Max</option>
+              <option value="4911">Amiga</option>
+              <option value="4947">Amiga CD32</option>
+              <option value="4914">Amstrad CPC</option>
+              <option value="4916">Android</option>
+              <option value="4969">APF MP-1000</option>
+              <option value="4942">Apple II</option>
+              <option value="23">Arcade</option>
+              <option value="22">Atari 2600</option>
+              <option value="26">Atari 5200</option>
+              <option value="27">Atari 7800</option>
+              <option value="4943">Atari 800</option>
+              <option value="28">Atari Jaguar</option>
+              <option value="29">Atari Jaguar CD</option>
+              <option value="4924">Atari Lynx</option>
+              <option value="4937">Atari ST</option>
+              <option value="30">Atari XE</option>
+              <option value="4968">Bally Astrocade</option>
+              <option value="4964">Casio PV-1000</option>
+              <option value="4970">Coleco Telstar Arcade</option>
+              <option value="31">Colecovision</option>
+              <option value="4946">Commodore 128</option>
+              <option value="40">Commodore 64</option>
+              <option value="4945">Commodore VIC-20</option>
+              <option value="4952">Dragon 32/64</option>
+              <option value="4963">Emerson Arcadia 2001</option>
+              <option value="4974">Entex Adventure Vision</option>
+              <option value="4973">Entex Select-a-Game</option>
+              <option value="4965">Epoch Cassette Vision</option>
+              <option value="4966">Epoch Super Cassette Vision</option>
+              <option value="4928">Fairchild Channel F</option>
+              <option value="4936">Famicom Disk System</option>
+              <option value="4932">FM Towns Marty</option>
+              <option value="4978">Fujitsu FM-7</option>
+              <option value="4962">Gakken Compact Vision</option>
+              <option value="4950">Game &amp; Watch</option>
+              <option value="4940">Game.com</option>
+              <option value="4951">Handheld Electronic Games (LCD)</option>
+              <option value="32">Intellivision</option>
+              <option value="4915">iOS</option>
+              <option value="37">Mac OS</option>
+              <option value="4961">Magnavox Odyssey 1</option>
+              <option value="4927">Magnavox Odyssey 2</option>
+              <option value="4948">Mega Duck</option>
+              <option value="14">Microsoft Xbox</option>
+              <option value="15">Microsoft Xbox 360</option>
+              <option value="4920">Microsoft Xbox One</option>
+              <option value="4972">Milton Bradley Microvision</option>
+              <option value="4929">MSX</option>
+              <option value="4938">N-Gage</option>
+              <option value="24">Neo Geo</option>
+              <option value="4956">Neo Geo CD</option>
+              <option value="4922">Neo Geo Pocket</option>
+              <option value="4923">Neo Geo Pocket Color</option>
+              <option value="4912">Nintendo 3DS</option>
+              <option value="3">Nintendo 64</option>
+              <option value="8">Nintendo DS</option>
+              <option value="7">Nintendo Entertainment System (NES)</option>
+              <option value="4">Nintendo Game Boy</option>
+              <option value="5">Nintendo Game Boy Advance</option>
+              <option value="41">Nintendo Game Boy Color</option>
+              <option value="2">Nintendo GameCube</option>
+              <option value="4957">Nintendo Pokémon Mini</option>
+              <option value="4971">Nintendo Switch</option>
+              <option value="4918">Nintendo Virtual Boy</option>
+              <option value="9">Nintendo Wii</option>
+              <option value="38">Nintendo Wii U</option>
+              <option value="4935">Nuon</option>
+              <option value="4921">Ouya</option>
+              <option value="1">PC</option>
+              <option value="4933">PC-88</option>
+              <option value="4934">PC-98</option>
+              <option value="4930">PC-FX</option>
+              <option value="4917">Philips CD-i</option>
+              <option value="4975">Pioneer LaserActive</option>
+              <option value="4967">RCA Studio II</option>
+              <option value="4979">SAM Coupé</option>
+              <option value="33">Sega 32X</option>
+              <option value="21">Sega CD</option>
+              <option value="16">Sega Dreamcast</option>
+              <option value="20">Sega Game Gear</option>
+              <option value="18">Sega Genesis</option>
+              <option value="35">Sega Master System</option>
+              <option value="36">Sega Mega Drive</option>
+              <option value="4958">Sega Pico</option>
+              <option value="17">Sega Saturn</option>
+              <option value="4949">SEGA SG-1000</option>
+              <option value="4977">Sharp X1</option>
+              <option value="4931">Sharp X68000</option>
+              <option value="4913">Sinclair ZX Spectrum</option>
+              <option value="10">Sony Playstation</option>
+              <option value="11">Sony Playstation 2</option>
+              <option value="12">Sony Playstation 3</option>
+              <option value="4919">Sony Playstation 4</option>
+              <option value="13">Sony Playstation Portable</option>
+              <option value="39">Sony Playstation Vita</option>
+              <option value="6">Super Nintendo (SNES)</option>
+              <option value="4953">Texas Instruments TI-99/4A</option>
+              <option value="4960">Tomy Tutor</option>
+              <option value="4941">TRS-80 Color Computer</option>
+              <option value="34">TurboGrafx 16</option>
+              <option value="4955">TurboGrafx CD</option>
+              <option value="4939">Vectrex</option>
+              <option value="4959">Watara Supervision</option>
+              <option value="4925">WonderSwan</option>
+              <option value="4926">WonderSwan Color</option>
+            </select>
+          </div>
+          <div>
+            <input [disabled]="disableButton()" (click) = "searchFor()" class="btn btn-primary btn-med" type="submit" value="Search">
+          </div>
+        </div>
+
+      <div style = "-webkit-flex-wrap: wrap; margin-left: 70px; width: 100%; display: inline-flex " *ngIf="gameInformation" >
+        <div class=" " style ="height: 400px; width: 240px; margin-bottom: 15px;margin-left: 50px ; margin-right: 50px; margin-top: 75px" *ngFor="let game of gameInformation.data.games">
+			  	<div style="padding-bottom:12px; height: 100%">
+				  	<a (click)="openDialog(game.id, game.game_title, game.release_date, game.overview, getUrl(game.id), game.rating, game.youtube)">
+              <div class="card border-primary fill" style="height: 100%;">
+               <div>
+					  		  <img style="height: 320px; width: 240px" class="card-img-top" alt="PosterIMG" [src] ="getUrl(game.id)">
+               </div>
+
+               <div class="card-body card-noboday" style="text-align:center;">
+                
+					  		</div>
+						  	<div class="card-footer bg-secondary" style="text-align:center;">
+						  		<p style="font-size: 11pt; padding-left: 0">{{game.game_title}}</p>
+						  		<p style="font-size: 11pt">{{game.release_date}}</p>
+					  		</div>
+				  		</div>
+			  		</a>
+         </div>
+        </div>
+      </div>
+
+      <div style = "margin-top: 50px; margin-left: 43%; margin-bottom:100px ">
+        <button [disabled] = "disablePrevious()" (click)="previous()" type="button" class="btn btn-primary">&laquo; Previous</button>
+        &nbsp;
+        <button [disabled] = "disableNext()" (click)="next()" type="button" class="btn btn-primary">Next &raquo;</button>
+    </div>
